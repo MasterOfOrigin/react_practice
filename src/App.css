@@ -41,14 +41,14 @@
 }
 
 .calculator .buttons .row  {
-  height: 25%;
+  height: 20%;
 }
 
 .calculator .buttons .button  {
   border: 1px solid #17a2b8;
   text-align: center;
+  line-height: 250%;
   vertical-align: middle;
-  line-height: 66px;
   background-color: white;
   font-weight: bold;
   font-size: 20px;
@@ -70,7 +70,6 @@
 }
 
 .calculator .buttons .button .operation {
-
 }
 
 .calculator .buttons .button .digit {
