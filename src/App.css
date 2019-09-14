@@ -88,9 +88,11 @@
 
 .weather .day-forecast {
   min-width: 80px;
+
 }
 
 .weather .day-forecast .day {
+  font-weight: bold;
 }
 
 .weather .day-forecast .temperature {
@@ -101,6 +103,7 @@
 }
 
 .weather .day-forecast .temperature .high {
+  font-weight: bold;
 }
 
 

@@ -77,14 +77,14 @@ export class Weather extends React.Component {
 
 // child components
 const DayForecast = (props) => (
-  <div className="day-forecast col-xs-2 col-xs-offset-1 border border-dark">
+  <div className="day-forecast bg-secondary col-xs-2 col-xs-offset-1 border border-light">
     <div className="day">{props.day}</div>
     <img src={`http://openweathermap.org/img/wn/${props.weather_icon}@2x.png`} />
     <div className="row justify-content-center" >
       <div className="col-xs-6 temperature high text-dark" >
         {props.temp_max}&deg;
       </div>
-      <div className="col-xs-6 temperature low text-muted" >
+      <div className="col-xs-6 temperature low text-white" >
         {props.temp_min}&deg;
       </div>
     </div>
