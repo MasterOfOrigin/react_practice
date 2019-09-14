@@ -51,7 +51,7 @@ export class Weather extends React.Component {
     return (
       <div className="container weather">
         <h2>
-          Five Day Forecast
+          Five(ish) Day Forecast
         </h2>
         <br />
         <form onSubmit={this.handleSubmit}>
