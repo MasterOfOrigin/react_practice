@@ -76,6 +76,22 @@
 
 }
 
+.weather .five-day img {
+    display: block;
+    text-align: center;
+    height: 60px;
+    width: 60px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: -10px;
+    margin-bottom: -10px;
+
+}
+
+.weather .day-forecast {
+  min-width: 80px;
+}
+
 
 
 
