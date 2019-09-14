@@ -34,16 +34,11 @@ export class Weather extends React.Component {
   }
 
   getFiveDayForecast(zip) {
-    console.log("In getFiveDayForecast. zip: ", zip)
     fetch(`https://api.openweathermap.org/data/2.5/forecast?zip=${zip}&APPID=${OPEN_WEATHER_KEY}`)
       .then(res => res.json())
       .then(formatWeatherApiRes)
       .then(R.merge({currentZip: this.state.zip}))
       .then(this.setState.bind(this))
-      .then(res => {
-        console.log(this.state)
-        console.log(JSON.stringify(this.state))
-      })
   }
 
   render() {
