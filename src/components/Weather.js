@@ -10,11 +10,13 @@ import formatWeatherApiRes from '../helpers/formatWeatherApiRes'
 export class Weather extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      zip: '',
-      city: '',
-      days: {}
-    };
+    // this.state = {
+    //   zip: '',
+    //   currentZip: '',
+    //   city: '',
+    //   days: {}
+    // };
+    this.state = {"zip":"23413","city":"Nassawadox","days":{"Sat":{"temp_min":77,"temp_max":80,"weather_icon":"10d"},"Sun":{"temp_min":74,"temp_max":79,"weather_icon":"10d"},"Mon":{"temp_min":74,"temp_max":81,"weather_icon":"01d"},"Tues":{"temp_min":71,"temp_max":76,"weather_icon":"04d"},"Weds":{"temp_min":67,"temp_max":70,"weather_icon":"01d"},"Thurs":{"temp_min":66,"temp_max":69,"weather_icon":"03d"}}}
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,8 +28,10 @@ export class Weather extends React.Component {
   }
 
   handleSubmit(event) {
-    this.getFiveDayForecast(this.state.zip)
     event.preventDefault();
+    // prevent unnecessary api calls
+    if (this.state.zip !== this.state.currentZip)
+      this.getFiveDayForecast(this.state.zip)
   }
 
   getFiveDayForecast(zip) {
@@ -35,6 +39,7 @@ export class Weather extends React.Component {
     fetch(`https://api.openweathermap.org/data/2.5/forecast?zip=${zip}&APPID=${OPEN_WEATHER_KEY}`)
       .then(res => res.json())
       .then(formatWeatherApiRes)
+      .then(R.merge({currentZip: this.state.zip}))
       .then(this.setState.bind(this))
       .then(res => {
         console.log(this.state)
@@ -76,8 +81,12 @@ const DayForecast = (props) => (
     <div className="day">{props.day}</div>
     <img src={`http://openweathermap.org/img/wn/${props.weather_icon}@2x.png`} />
     <div className="row justify-content-center" >
-      <div className="col-xs-6 temperature" style={{ margin: '5px'}}>{props.temp_max}&deg;</div>
-    <div className="col-xs-6 temperature" style={{ margin: '5px'}}>{props.temp_min}&deg;</div>
+      <div className="col-xs-6 temperature high text-dark" >
+        {props.temp_max}&deg;
+      </div>
+      <div className="col-xs-6 temperature low text-muted" >
+        {props.temp_min}&deg;
+      </div>
     </div>
   </div>
 )

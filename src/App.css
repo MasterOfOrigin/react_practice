@@ -66,14 +66,12 @@
 }
 
 .calculator .buttons .button .clear {
-
 }
 
 .calculator .buttons .button .operation {
 }
 
 .calculator .buttons .button .digit {
-
 }
 
 .weather .five-day img {
@@ -90,6 +88,19 @@
 
 .weather .day-forecast {
   min-width: 80px;
+}
+
+.weather .day-forecast .day {
+}
+
+.weather .day-forecast .temperature {
+  margin: 5px;
+}
+
+.weather .day-forecast .temperature .low {
+}
+
+.weather .day-forecast .temperature .high {
 }
 
 
