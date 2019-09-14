@@ -10,13 +10,12 @@ import formatWeatherApiRes from '../helpers/formatWeatherApiRes'
 export class Weather extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //   zip: '',
-    //   currentZip: '',
-    //   city: '',
-    //   days: {}
-    // };
-    this.state = {"zip":"23413","city":"Nassawadox","days":{"Sat":{"temp_min":77,"temp_max":80,"weather_icon":"10d"},"Sun":{"temp_min":74,"temp_max":79,"weather_icon":"10d"},"Mon":{"temp_min":74,"temp_max":81,"weather_icon":"01d"},"Tues":{"temp_min":71,"temp_max":76,"weather_icon":"04d"},"Weds":{"temp_min":67,"temp_max":70,"weather_icon":"01d"},"Thurs":{"temp_min":66,"temp_max":69,"weather_icon":"03d"}}}
+    this.state = {
+      zip: '',
+      currentZip: '',
+      city: '',
+      days: {}
+    };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
